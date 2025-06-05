@@ -1,0 +1,50 @@
+name: purge-cdn
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - '**/*-rules.yaml'
+      - '.github/workflows/**'
+  # 每天 UTC 03:00 运行一次（北京时间 11:00）
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+# github actions中允许write到其余分支
+permissions:
+  contents: write
+
+jobs:
+  build-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare rules
+        run: |
+          mkdir -p publish/ip
+          mkdir -p publish/domain
+          
+          cp -r ip/* ./publish/ip/
+          cp -r domain/* ./publish/domain/
+
+      - name: Push to release branch
+        run: |
+          cd publish
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C release
+          git add .
+          git commit -m "Update Clash rules"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -f origin release
+
+      - name: Purge jsDelivr CDN
+        run: |
+          cd publish
+          for file in $(ls); do
+            echo "Purging: $file"
+            curl -s -i "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${file}"
+          done

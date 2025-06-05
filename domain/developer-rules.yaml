@@ -1,0 +1,12 @@
+payload:
+  # git
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,github.io
+
+  # cdn
+  - DOMAIN-SUFFIX,jsdelivr.com
+  - DOMAIN-SUFFIX,jsdelivr.net
+
+  # docker
+  - DOMAIN-SUFFIX,docker.com
+  - DOMAIN-SUFFIX,ghcr.io
