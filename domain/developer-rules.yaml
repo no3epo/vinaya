@@ -15,3 +15,6 @@ payload:
   # docker
   - DOMAIN-SUFFIX,docker.com
   - DOMAIN-SUFFIX,ghcr.io
+
+  # platform
+  - DOMAIN-SUFFIX,v2ex.com
