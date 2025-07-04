@@ -5,3 +5,6 @@ payload:
 
   # Dify
   - DOMAIN-SUFFIX,dify.ai
+
+  # Anthropic
+  - DOMAIN-SUFFIX,claude.ai
