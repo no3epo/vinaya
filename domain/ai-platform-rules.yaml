@@ -8,3 +8,6 @@ payload:
 
   # Anthropic
   - DOMAIN-SUFFIX,claude.ai
+
+  # Cursor
+  - DOMAIN-SUFFIX,api2.cursor
