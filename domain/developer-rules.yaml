@@ -1,0 +1,20 @@
+payload:
+  # 托管/部署平台
+  - DOMAIN-SUFFIX,vercel.app
+  - DOMAIN-SUFFIX,vercel-storage.com
+  - DOMAIN-SUFFIX,github.io
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,github.dev
+  - DOMAIN-SUFFIX,githubusercontent.com
+  - DOMAIN-SUFFIX,gitlab.com
+
+  # cdn
+  - DOMAIN-SUFFIX,jsdelivr.com
+  - DOMAIN-SUFFIX,jsdelivr.net
+
+  # docker
+  - DOMAIN-SUFFIX,docker.com
+  - DOMAIN-SUFFIX,ghcr.io
+
+  # platform
+  - DOMAIN-SUFFIX,v2ex.com

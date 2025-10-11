@@ -1,0 +1,13 @@
+payload:
+  # Openai
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,chatgpt.com
+
+  # Dify
+  - DOMAIN-SUFFIX,dify.ai
+
+  # Anthropic
+  - DOMAIN-SUFFIX,claude.ai
+
+  # Cursor
+  - DOMAIN-SUFFIX,api2.cursor
